@@ -1,0 +1,32 @@
+#######################################
+# Syntax Coloring Map For Mobot
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Mobot KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+enableMotors		KEYWORD2
+disableMotors		KEYWORD2
+leftMotorBrake	KEYWORD2
+rightMotorBrake	KEYWORD2
+leftMotor				KEYWORD2
+rightMotor			KEYWORD2
+stop						KEYWORD2
+forward					KEYWORD2
+turnLeft				KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+

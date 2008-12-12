@@ -1,0 +1,7 @@
+To use the Mobot library:
+* Make a "Mobot" directory inside of the hardware/libraries sub-directory of the Arduino application directory. 
+* Copy all the files into that directory.
+* Now launch the Arduino environment.
+* When it starts, it will compile your library, generating an object file (mobot.o) and displaying any warnings or errors.
+* If you open the Sketch > Import Library menu, you should see Mobot inside. As you work on your library, you'll need to delete the mobot.o file and relaunch the Arduino environment (or pick a new board from the Tools > Boards menu) to recompile your library.
+* If the library doesn't seem to build, make sure that the files really end in .cpp and .h (with no extra .pde or .txt extension, for example).
