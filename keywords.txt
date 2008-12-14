@@ -12,6 +12,9 @@ Mobot KEYWORD1
 # Methods and Functions (KEYWORD2)
 #######################################
 
+goFor0          KEYWORD2
+goFor1          KEYWORD2
+goFor2          KEYWORD2
 enableMotors		KEYWORD2
 disableMotors		KEYWORD2
 leftMotorBrake	KEYWORD2
@@ -20,6 +23,8 @@ leftMotor				KEYWORD2
 rightMotor			KEYWORD2
 stop						KEYWORD2
 forward					KEYWORD2
+spinLeft        KEYWORD2
+spinRight       KEYWORD2
 turnLeft				KEYWORD2
 
 #######################################

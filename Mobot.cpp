@@ -20,10 +20,19 @@ Mobot::Mobot(int E1, int E2, int I1, int I2, int I3, int I4){
 	_I4 = I4;
 }
 
-void Mobot::forward(int speed) {
-	enableMotors();
-	leftMotor(0, speed);
-	rightMotor(0, speed);
+void Mobot::goFor0(int msec, Mobot *m, void (Mobot::*fn)()) {
+	(*m.*fn)();
+	delay(msec);
+}
+
+void Mobot::goFor1(int msec, Mobot *m, void (Mobot::*fn)(int), int arg1) {
+	(*m.*fn)(arg1);
+	delay(msec);
+}
+
+void Mobot::goFor2(int msec, Mobot *m, void (Mobot::*fn)(int,int), int arg1, int arg2) {
+	(*m.*fn)(arg1,arg2);
+	delay(msec);
 }
 
 void Mobot::enableMotors() {
@@ -34,6 +43,16 @@ void Mobot::enableMotors() {
 void Mobot::disableMotors() {
 	digitalWrite(_E1, LOW);
 	digitalWrite(_E2, LOW); 
+}
+
+void Mobot::leftMotorBrake() {
+	digitalWrite(_I4, LOW);
+	digitalWrite(_I3, LOW);
+}
+
+void Mobot::rightMotorBrake() {
+	digitalWrite(_I1, LOW);
+	digitalWrite(_I2, LOW); 
 }
 
 void Mobot::leftMotor(int dir, int speed) {
@@ -49,11 +68,6 @@ void Mobot::leftMotor(int dir, int speed) {
 			analogWrite(_I3, speed);
    }
 	}
-}
-
-void Mobot::leftMotorBrake() {
-	digitalWrite(_I4, LOW);
-	digitalWrite(_I3, LOW);
 }
 
 void Mobot::rightMotor(int dir, int speed) {
@@ -73,14 +87,27 @@ void Mobot::rightMotor(int dir, int speed) {
 	}
 }
 
-void Mobot::rightMotorBrake() {
-	digitalWrite(_I1, LOW);
-	digitalWrite(_I2, LOW); 
-}
-
 void Mobot::stop() {
 	leftMotorBrake();
 	rightMotorBrake(); 
+}
+
+void Mobot::forward(int speed) {
+	enableMotors();
+	leftMotor(0, speed);
+	rightMotor(0, speed);
+}
+
+void Mobot::spinLeft(int speed) {
+	enableMotors();
+	leftMotor(1, speed);
+	rightMotor(0, speed);
+}
+
+void Mobot::spinRight(int speed) {
+	enableMotors();
+	leftMotor(0, speed);
+	rightMotor(1, speed);
 }
 
 void Mobot::turnLeft() {
